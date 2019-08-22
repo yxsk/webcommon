@@ -1,15 +1,14 @@
 <template>
   <div>
-    <tabs></tabs>
-    home
+    <NavMenu></NavMenu>
   </div>
 </template>
 <script>
-import tabs from '../components/tabs'
+import NavMenu from '../components/NavMenu'
 export default {
-  name:'home',
+  name:'sidebar',
   components:{
-    tabs
+    NavMenu
   },
   data(){
     return {
@@ -18,6 +17,6 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="sass" scoped>
 
 </style>
