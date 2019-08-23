@@ -18,10 +18,10 @@
     height:100%;
   }
   .sidebar{
-    width:30%;
+    width:25%;
   }
   .home{
-    width:70%;
+    width:75%;
   }
 }
 </style>

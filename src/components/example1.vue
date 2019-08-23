@@ -1,19 +1,18 @@
 <template>
   <div>
-    <tabs></tabs>
+    例1
   </div>
 </template>
 <script>
-import tabs from '../components/tabs'
 export default {
-  name:'home',
-  components:{
-    tabs
-  },
+  name:'example1',
   data(){
     return {
 
     }
+  },
+  methods:{
+    
   }
 }
 </script>
