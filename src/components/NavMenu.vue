@@ -12,13 +12,13 @@
           active-text-color="#ffd04b">
           <el-submenu index="1">
             <template slot="title">
-              <span>导航一</span>
+              <span>父导航</span>
             </template>
-            <el-menu-item index="example0">选项1</el-menu-item>
-            <el-menu-item index="example1">选项2</el-menu-item>
+            <el-menu-item index="example0">example0</el-menu-item>
+            <el-menu-item index="example1">example1</el-menu-item>
           </el-submenu>
           <el-menu-item index="example2" :route="{ path: '/home/example2'}">
-            <span slot="title">导航二</span>
+            <span slot="title">example2</span>
           </el-menu-item>
         </el-menu>
       </el-col>
@@ -30,7 +30,12 @@ export default {
   name:'NavMenu',
   data(){
     return {
-      activeItem:'example2'
+      
+    }
+  },
+  computed:{
+    activeItem(){
+      return this.$store.state.navActiveItem
     }
   },
   methods: {

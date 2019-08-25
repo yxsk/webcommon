@@ -56,7 +56,8 @@ export default {
   methods:{
     handleClick(tab, event) {
       console.log(tab, event);
-      console.log(this.editableTabsValue)
+      console.log(tab.name);
+      this.$store.commit('changeNav',tab.name)
     },
     handleTabsEdit(targetName, action) {
       console.log(targetName)

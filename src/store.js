@@ -9,6 +9,7 @@ export default new Vuex.Store({
     password:'',
     userId:'',
     baseUrl:'',
+    navActiveItem:'example2',
     menu:[
       {
         title:'导航一',
@@ -37,6 +38,9 @@ export default new Vuex.Store({
   mutations: {
     selectTab(state,tabName){
       state.tabSelect=tabName;
+    },
+    changeNav(state,itemName){
+      state.navActiveItem=itemName;
     }
   },
   actions: {

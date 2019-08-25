@@ -14,22 +14,8 @@ const routes= [
     name: 'home',
     components: {
       default: () => import('./views/sidebar.vue'),
-      home: () => import('./views/home.vue'),
-    },
-    children: [
-      {
-        path:'example0',
-        component:()=>import('./components/example0.vue')
-      },
-      {
-        path:'example1',
-        component:()=>import('./components/example1.vue')
-      },
-      {
-        path:'example2',
-        component:()=>import('./components/example2.vue')
-      }
-    ]
+      home: () => import('./views/Home.vue'),
+    }
   }
 ]
 
