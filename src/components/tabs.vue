@@ -4,8 +4,8 @@
       v-model="editableTabsValue" 
       type="card" 
       @tab-click="handleClick" 
-      editable 
-      @edit="handleTabsEdit" 
+      closable  
+      @tab-remove="handleRemove" 
     >
       <el-tab-pane
         :key="item.name"
@@ -57,38 +57,12 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
       console.log(tab.name);
-      this.$store.commit('changeNav',tab.name)
+      this.$store.commit('tabClick',tab.name)
     },
-    handleTabsEdit(targetName, action) {
-      console.log(targetName)
-      console.log(action)
-      if (action === 'add') {
-        let newTabName = ++this.tabIndex + '';
-        this.editableTabs.push({
-          title: 'New Tab',
-          name: newTabName,
-          content: 'New Tab content'
-        });
-        this.editableTabsValue = newTabName;
-      }
-      if (action === 'remove') {
-        let tabs = this.editableTabs;
-        let activeName = this.editableTabsValue;
-        if (activeName === targetName) {
-          tabs.forEach((tab, index) => {
-            if (tab.name === targetName) {
-              let nextTab = tabs[index + 1] || tabs[index - 1];
-              if (nextTab) {
-                activeName = nextTab.name;
-              }
-            }
-          });
-        }
-        
-        this.editableTabsValue = activeName;
-        this.editableTabs = tabs.filter(tab => tab.name !== targetName);
-      }
-    }
+    //关闭tab
+    handleRemove(targetName){
+      this.$store.commit('tabListRemove',targetName)
+    },
   }
 }
 </script>

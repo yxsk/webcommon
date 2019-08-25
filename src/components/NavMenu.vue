@@ -17,7 +17,7 @@
             <el-menu-item index="example0">example0</el-menu-item>
             <el-menu-item index="example1">example1</el-menu-item>
           </el-submenu>
-          <el-menu-item index="example2" :route="{ path: '/home/example2'}">
+          <el-menu-item index="example2">
             <span slot="title">example2</span>
           </el-menu-item>
         </el-menu>
@@ -39,10 +39,16 @@ export default {
     }
   },
   methods: {
+    //选中nav
     selectHandle(index,indexPath){
       console.log(index)
       console.log(indexPath)
-      this.$store.commit('selectTab',index) // 当使用对象作为提交方式时，整个对象都会被当做载荷
+      //const obj={};
+      //obj.title=index;
+      //obj.name=index;
+      //obj.content=index;
+      //this.$store.commit('tabListAdd',obj)
+      this.$store.commit('navClick',index)
     }
   }
 }
