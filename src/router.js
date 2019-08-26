@@ -14,7 +14,7 @@ const routes= [
     name: 'home',
     components: {
       default: () => import('./views/sidebar.vue'),
-      home: () => import('./views/Home.vue'),
+      home: () => import('./views/home.vue'),
     }
   }
 ]
@@ -26,7 +26,6 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  // console.log(to.path)
   next();
 })
 

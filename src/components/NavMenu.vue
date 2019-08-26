@@ -35,19 +35,17 @@ export default {
   },
   computed:{
     activeItem(){
-      return this.$store.state.navActiveItem
+      return this.$store.state.navActiveItem;
     }
   },
   methods: {
     //选中nav
     selectHandle(index,indexPath){
-      console.log(index)
-      console.log(indexPath)
-      //const obj={};
-      //obj.title=index;
-      //obj.name=index;
-      //obj.content=index;
-      //this.$store.commit('tabListAdd',obj)
+      /* 
+        1.获取到tabNameList
+        2.如果新增name在tabNameList中则选中
+        3.如果不在则push并选中
+      */
       this.$store.commit('navClick',index)
     }
   }

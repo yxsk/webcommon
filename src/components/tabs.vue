@@ -1,6 +1,7 @@
 <template>
   <div>
     <el-tabs 
+      v-if="tabList.length"
       v-model="editableTabsValue" 
       type="card" 
       @tab-click="handleClick" 

@@ -9,28 +9,13 @@ export default new Vuex.Store({
     password:'',
     userId:'',
     baseUrl:'',
-    navActiveItem:'example2',
-    menu:[
-      {
-        title:'导航一',
-        icon:'el-icon-location',
-        tab:'template1',
-        disabled:'false',//默认false
-      }
-    ],
-    tabList:[],
-    tabSelect:'example0',
+    navActiveItem:'',//选中的nav
+    tabList:[],//tab列表
+    tabNameList:[],//tab name列表
+    tabSelect:'',//选中的tab
   },
-  getters:{
-    tabNameList:(state)=>{
-      let list=[];
-      for(var i=0;i<state.tabList.length;i++){
-        if(state.tabList[i].name){
-          list.push(state.tabList[i].name)
-        }
-      }
-      return list;
-    }
+  getters : {
+
   },
   mutations: {
     /**
@@ -39,16 +24,17 @@ export default new Vuex.Store({
      * 2.tab存在，只选中tab
      * */
     navClick(state,tabName){
-      console.log(state.tabList)
-      if(state.getters.tabNameList.length){
-        // for(var i=0;i<state.getters.tabNameList.length;i++){
-
-        // }
-        if(state.getters.tabNameList.indexOf(tabName)){
-          //存在
+      // 1.获取到tabNameList
+      state.tabNameList=[];
+      for(var i=0;i<state.tabList.length;i++){
+        if(state.tabList[i].name){
+          state.tabNameList.push(state.tabList[i].name)
+        }
+      }
+      if(state.tabNameList.length){
+        if(state.tabNameList.indexOf(tabName)>=0){
           state.tabSelect=tabName;
         }else{
-          //不存在
           const obj={};
           obj.title=tabName;
           obj.name=tabName;
@@ -64,35 +50,6 @@ export default new Vuex.Store({
         state.tabList.push(obj);
         state.tabSelect=tabName;
       }
-      //state.tabSelect=tabName;
-      //let tabs = state.tabList;
-      //let activeName = state.tabSelect;
-      /**if(tabs.length>0){
-      tabs.forEach((tab, index) => {
-        console.log(tab)
-        console.log(tabName)
-        if (tab.name === tabName) {
-          consle.log('存在')
-          //1.存在
-          state.tabSelect=tabName;
-        }else{
-          console.log('不存在')
-          //2.不存在
-          const obj={};
-          obj.title=tabName;
-          obj.name=tabName;
-          obj.content=tabName;
-          state.tabList.push(obj);
-          state.tabSelect=tabName;
-        }
-      });}else{
-        const obj={};
-        obj.title=tabName;
-        obj.name=tabName;
-        obj.content=tabName;
-        state.tabList.push(obj);
-        state.tabSelect=tabName;
-      }**/
     },
     //改变选中的nav
     tabClick(state,itemName){
@@ -110,6 +67,7 @@ export default new Vuex.Store({
       state.tabList.push(tabItem);
       state.tabSelect=tabItem.name;
     },
+    /* 删除tab */
     tabListRemove(state,targetName){
       let tabs = state.tabList;
       let activeName = state.tabSelect;
