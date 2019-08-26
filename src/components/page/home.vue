@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import tabs from '../components/tabs'
+import tabs from '../sidebar/tabs'
 export default {
   name:'home',
   components:{

@@ -7,15 +7,12 @@ const routes= [
   {
     path:'/',
     name:'login',
-    component:() => import('./components/login.vue')
+    component:() => import('./views/login.vue')
   },
   {
     path: '/home',
     name: 'home',
-    components: {
-      default: () => import('./views/sidebar.vue'),
-      home: () => import('./views/home.vue'),
-    }
+    component: () => import('./views/page.vue')
   }
 ]
 

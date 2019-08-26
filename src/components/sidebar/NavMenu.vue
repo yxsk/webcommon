@@ -1,10 +1,10 @@
 <template>
   <div>
     <el-row class="tac">
-      <el-col :span="12">
+      <el-col :span="24">
         <el-menu
           :default-active="activeItem"
-          class="el-menu-vertical-demo" 
+          class="el-menu-vertical-demo"
           @select="selectHandle"
           popper-append-to-body
           background-color="#545c64"
@@ -30,7 +30,7 @@ export default {
   name:'NavMenu',
   data(){
     return {
-      
+
     }
   },
   computed:{
@@ -41,7 +41,7 @@ export default {
   methods: {
     //选中nav
     selectHandle(index,indexPath){
-      /* 
+      /*
         1.获取到tabNameList
         2.如果新增name在tabNameList中则选中
         3.如果不在则push并选中

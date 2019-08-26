@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import NavMenu from '../components/NavMenu'
+import NavMenu from '../sidebar/NavMenu'
 export default {
   name:'sidebar',
   components:{

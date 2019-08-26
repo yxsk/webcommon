@@ -1,0 +1,8 @@
+@media screen and (max-height: 768px){
+  .el-form-item1 {
+    margin-bottom: 15px;
+  }
+  .el-form-item1 /deep/ .el-form-item__content .el-input__inner {
+    height: 30px;
+  }
+}

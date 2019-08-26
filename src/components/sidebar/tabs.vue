@@ -1,12 +1,12 @@
 <template>
   <div>
-    <el-tabs 
+    <el-tabs
       v-if="tabList.length"
-      v-model="editableTabsValue" 
-      type="card" 
-      @tab-click="handleClick" 
-      closable  
-      @tab-remove="handleRemove" 
+      v-model="editableTabsValue"
+      type="card"
+      @tab-click="handleClick"
+      closable
+      @tab-remove="handleRemove"
     >
       <el-tab-pane
         :key="item.name"
@@ -21,9 +21,9 @@
   </div>
 </template>
 <script>
-import example0 from './example0'
-import example1 from './example1'
-import example2 from './example2'
+import example0 from '../home/example0'
+import example1 from '../home/example1'
+import example2 from '../home/example2'
 
 export default {
   name:'tabs',
