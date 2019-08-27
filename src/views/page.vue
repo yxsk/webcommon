@@ -43,6 +43,7 @@
     }
     .content-right {
         width: 80%;
+        height: auto;
         margin-top: 212px;
     }
 </style>

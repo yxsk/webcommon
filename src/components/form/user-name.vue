@@ -1,7 +1,7 @@
 <template>
   <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
     <el-form-item  prop="name" class="el-form-item1">
-      <el-input v-model="ruleForm.name" placeholder="请输入用户名"></el-input>
+      <el-input v-model="ruleForm.name" placeholder="请输入用户名" @keyup.native="preventSpecial"></el-input>
       <img class="img" src="../../assets/imgs/username.png" alt="用户名图标">
     </el-form-item>
   </el-form>
@@ -13,14 +13,20 @@
     data() {
       return {
         ruleForm: {
-          name: ''
+          name: '',
         },
         rules: {
           name: [
             { required: true, message: '请输入您的用户名', trigger: 'blur' },
-            { min: 6, max: 20, message: '长度最少六个字符', trigger: 'blur' }
+            { min: 3, max: 18, message: '长度最少三个字符', trigger: 'blur' }
           ],
         }
+      }
+    },
+    methods: {
+      preventSpecial() {
+        this.ruleForm.name = this.ruleForm.name.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'');
+        // value = value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')
       }
     }
   }

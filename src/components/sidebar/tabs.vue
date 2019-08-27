@@ -14,7 +14,7 @@
         :label="item.title"
         :name="item.name"
       >
-      <component v-bind:is="item.content"></component>
+      <component :is="item.content"></component>
       </el-tab-pane>
       <!-- <router-view /> -->
     </el-tabs>
@@ -24,6 +24,7 @@
 import example0 from '../home/example0'
 import example1 from '../home/example1'
 import example2 from '../home/example2'
+import enterpriseAdmin from '@/views/sysAdmin/enterpriseAdmin'
 
 export default {
   name:'tabs',
@@ -31,6 +32,7 @@ export default {
     example0,
     example1,
     example2,
+	enterpriseAdmin
   },
   data(){
     return {
@@ -51,6 +53,7 @@ export default {
       return this.$store.state.tabSelect
     },
     tabList(){
+		console.log(this.$store.state.tabList)
       return this.$store.state.tabList
     },
   },
