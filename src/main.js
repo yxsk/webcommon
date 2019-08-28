@@ -5,9 +5,9 @@ import store from './store'
 import ElementUi from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import './assets/css/common.css'
+import './assets/js/public/jquery-3.4.1.min'
 
 Vue.use(ElementUi)
-
 Vue.config.productionTip = false
 
 new Vue({

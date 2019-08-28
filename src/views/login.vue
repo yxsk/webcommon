@@ -5,11 +5,11 @@
       <div class="form-val">
         <form action="" class="form-child">
           <h2>图安世纪后台管理系统</h2>
-          <component :is="username"></component>
-          <component :is="password"></component>
-          <component :is="verfication_code"></component>
-          <component :is="dynamic_erfication_code"></component>
-          <component :is="keep_username"></component>
+          <UserName></UserName>
+          <Password></Password>
+          <VerficationCode></VerficationCode>
+          <DynamicVerficationCode></DynamicVerficationCode>
+          <KeepUsername></KeepUsername>
           <p>找回密码</p>
         </form>
       </div>
@@ -27,17 +27,13 @@
     name: 'login',
     data() {
       return {
-        username: UserName,
-        password: Password,
-        verfication_code:VerficationCode,
-        dynamic_erfication_code:DynamicVerficationCode,
-        keep_username:KeepUsername,
+
       }
     },
     methods: {
 
     },
-    component: {
+    components: {
       UserName,
       Password,
       VerficationCode,

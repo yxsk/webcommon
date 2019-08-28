@@ -1,10 +1,10 @@
 <template>
     <div class="content">
         <div class="content-left">
-            <component :is="sidebar"></component>
+            <Home></Home>
         </div>
         <div class="content-right">
-            <component :is="home"></component>
+            <Sidebar></Sidebar>
         </div>
     </div>
 </template>
@@ -15,13 +15,6 @@
 
     export default {
         name: "index",
-        data() {
-            return {
-                home: Home,
-                sidebar: Sidebar
-            }
-
-        },
         components: {
             Home,
             Sidebar

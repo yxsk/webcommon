@@ -2,7 +2,7 @@
   .el-form-item1 {
     margin-bottom: 15px;
   }
-  .el-form-item1 /deep/ .el-form-item__content .el-input__inner {
+  .el-form-item1 .el-form-item__content .el-input__inner {
     height: 30px;
   }
 }

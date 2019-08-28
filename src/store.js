@@ -5,10 +5,44 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
-		userName: '',
-		password: '',
-		userId: '',
-		baseUrl: '',
+		loginInfo:[
+			{
+				userName: 'zyq',
+				password: '123456',
+				userId: 1,
+				baseUrl: '',
+			},
+			{
+				userName: 'cqb',
+				password: '123456',
+				userId: 1,
+				baseUrl: '',
+			},
+			{
+				userName: 'lyn',
+				password: '123456',
+				userId: 1,
+				baseUrl: '',
+			},
+			{
+				userName: 'npn',
+				password: '123456',
+				userId: 0,
+				baseUrl: '',
+			},
+			{
+				userName: 'wxl',
+				password: '123456',
+				userId: 1,
+				baseUrl: '',
+			},
+			{
+				userName: 'hss',
+				password: '123456',
+				userId: 1,
+				baseUrl: '',
+			}
+		],
 		navActiveItem: '', //选中的nav
 		tabList: [], //tab列表
 		tabNameList: [], //tab name列表
@@ -65,7 +99,7 @@ export default new Vuex.Store({
 		 *  name: 'example0',
 		 *  content: 'example0'
 		 * }
-		 * 
+		 *
 		 * */
 		tabListAdd(state, tabItem) {
 			state.tabList.push(tabItem);

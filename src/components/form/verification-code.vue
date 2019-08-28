@@ -1,15 +1,16 @@
 <template>
   <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
     <el-form-item  prop="verification" class="el-form-item1">
-      <el-input v-model="ruleForm.verification" placeholder="请输入验证码"></el-input>
+      <el-input v-model="ruleForm.verification" placeholder="请输入验证码" @blur="sendInfo"></el-input>
       <div class="img" @click="refreshCode">
-        <CanvasVerfication :identifyCode="identifyCode"  ref="test"></CanvasVerfication>
+        <CanvasVerfication :identifyCode="identifyCode"></CanvasVerfication>
       </div>
     </el-form-item>
   </el-form>
 </template>
 
 <script>
+  import eventVue from '../../assets/js/public/eventVue'
   import CanvasVerfication from './canvas-verification'
   export default {
     name: 'verification-code',
@@ -22,9 +23,6 @@
           callback(new Error('验证码输入错误'));
         }
         else {
-          if (this.ruleForm.verification !== '') {
-            this.$refs.ruleForm.validateField('checkVerification');
-          }
           callback();
         }
       };
@@ -38,10 +36,21 @@
           ],
         },
         identifyCodes: '1234567890abcdefghijklmnopqrstuvwxyz',
-        identifyCode:''
+        identifyCode:'',
+        heightScr:'',
+        isTrue:false,
       }
     },
     methods: {
+      // 发送数据给兄弟组件keep-username
+      sendInfo() {
+        if(this.ruleForm.verification == this.identifyCode) {
+          this.isTrue = true;
+        }else {
+          this.isTrue = false;
+        }
+        eventVue.$emit('myVerification',this.isTrue)
+      },
       // 随机生成数值
       randomNum(min, max) {
         return Math.floor(Math.random() * (max - min) + min)
@@ -69,7 +78,6 @@
     }
   }
 </script>
-
 <style scoped>
   .el-form-item1 /deep/ .el-form-item__content {
     margin-left: 0 !important;

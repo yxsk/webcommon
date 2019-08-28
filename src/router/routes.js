@@ -3,7 +3,7 @@ export default [
   {
     path:'/',
     name:'login',
-    component:() => import('@/views/login.vue')
+    component:() => import('@/views/login')
   },{
     path: '/home',
     name: 'home',
@@ -11,13 +11,13 @@ export default [
       default:sidebar,
       home: () => import('@/components/page/home.vue'),
     }
+  },
+  {
+    path: '/sys-admin/enterprise-admin',
+    name: 'sys-admin',
+    components: {
+		default:sidebar,
+		home: () => import('@/views/sysAdmin/enterpriseAdmin'),
+	}
   }
- //  ,{
- //    path: '/sys-admin/enterprise-admin',
- //    name: 'sys-admin',
- //    components: {
-	// 	default:sidebar,
-	// 	home: () => import('@/views/sysAdmin/enterpriseAdmin'),
-	// }
- //  }
 ]
