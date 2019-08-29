@@ -13,7 +13,7 @@
             },
             fontSizeMin: {
                 type: Number,
-                default: 18
+                default: 20
             },
             fontSizeMax: {
                 type: Number,
@@ -33,7 +33,7 @@
             },
             colorMax: {
                 type: Number,
-                default: 160
+                default: 140
             },
             lineColorMin: {
                 type: Number,
@@ -41,7 +41,7 @@
             },
             lineColorMax: {
                 type: Number,
-                default: 180
+                default: 160
             },
             dotColorMin: {
                 type: Number,
@@ -57,7 +57,7 @@
             },
             contentHeight: {
                 type: Number,
-                default: 34
+                default: 26
             },
         },
         methods: {

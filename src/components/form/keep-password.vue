@@ -1,7 +1,7 @@
 <template>
   <el-form ref="ruleForm" label-width="100px" class="demo-ruleForm">
     <el-form-item class="el-form-item1">
-      <el-checkbox label="记住用户名" name="type" id="el-checkbox" @change="keepUser"></el-checkbox>
+      <el-checkbox label="记住密码" name="type" id="el-checkbox" @change="keepUser"></el-checkbox>
       <el-button type="primary" @click="loginInfo">立即登录</el-button>
     </el-form-item>
   </el-form>
@@ -10,7 +10,7 @@
 <script>
   import eventVue from '../../assets/js/public/eventVue'
   export default {
-    name: 'keep-username',
+    name: 'keep-password',
     data() {
       return {
         acceptUsername: '',
@@ -22,8 +22,8 @@
     methods: {
       // 将用户名添加到localStorage中
       keepUser() {
-        localStorage.removeItem('username');
-        localStorage.setItem('username', this.acceptUsername)
+        localStorage.removeItem('password');
+        localStorage.setItem('password', this.acceptPass)
       },
       // 登录
       loginInfo() {

@@ -3,7 +3,7 @@
     <el-form-item  prop="verification" class="el-form-item1">
       <el-input v-model="ruleForm.verification" placeholder="请输入验证码" @blur="sendInfo"></el-input>
       <div class="img" @click="refreshCode">
-        <CanvasVerfication :identifyCode="identifyCode"></CanvasVerfication>
+        <CanvasVerfication :identifyCode="identifyCode" :contentHeight="contentHeight" :fontSizeMax="fontSizeMax"></CanvasVerfication>
       </div>
     </el-form-item>
   </el-form>
@@ -39,6 +39,8 @@
         identifyCode:'',
         heightScr:'',
         isTrue:false,
+        contentHeight:'',
+        fontSizeMax:''
       }
     },
     methods: {
@@ -74,7 +76,10 @@
       CanvasVerfication
     },
     created() {
-      this.refreshCode()
+      this.refreshCode();
+      this.heightScr = $(window).height();
+      this.contentHeight = this.heightScr > 800? 34: 26;
+      this.fontSizeMax = this.heightScr > 800? 30: 22;
     }
   }
 </script>

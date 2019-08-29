@@ -22,7 +22,7 @@
   import Password from '../components/form/password'
   import VerficationCode from '../components/form/verification-code'
   import DynamicVerficationCode from '../components/form/dynamic-verification-code'
-  import KeepUsername from '../components/form/keep-username'
+  import KeepUsername from '../components/form/keep-password'
   export default {
     name: 'login',
     data() {
