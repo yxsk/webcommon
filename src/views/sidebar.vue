@@ -29,6 +29,10 @@ export default {
         2.如果新增name在tabNameList中则选中
         3.如果不在则push并选中
       */
+     console.log("------")
+     console.log(index)
+     console.log(indexPath)
+     console.log("------")
       this.$store.commit('navClick',index)
     }
   }
